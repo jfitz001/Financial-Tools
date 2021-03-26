@@ -15,4 +15,5 @@ def mkt_correlation(ticker_list, market='QQQ', time='1y'):
         new_data.append(balance)
     stocks = pd.concat(new_data, axis=1)
     portfolio = stocks.sum(axis=1)
-    correlation = portfo
+    correlation = portfolio.corr(market_data['Close'])
+    print(correlation)
